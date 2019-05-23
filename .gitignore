@@ -48,7 +48,12 @@ dlldata.c
 # Benchmark Results
 BenchmarkDotNet.Artifacts/
 
+#Migrations
+Migrations/
+
 # .NET Core
+appsettings.Development.json
+appsettings.json
 project.lock.json
 project.fragment.lock.json
 artifacts/
