@@ -12,5 +12,9 @@ namespace Model
         public int RolID { get; set; }
         public string Token { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
+        public UsuarioSec UsuarioSec { get; set; }
+        public Rol Rol { get; set; }
     }
 }

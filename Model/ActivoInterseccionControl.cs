@@ -10,5 +10,7 @@ namespace Model
         public int ActivoID { get; set; }
         public int ControlID { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

@@ -13,5 +13,7 @@ namespace Model
         public int Existencia { get; set; }
         public string Dimensiones { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

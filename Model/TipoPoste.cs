@@ -11,5 +11,7 @@ namespace Model
         public string NumParte { get; set; }
         public string Fabricante { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

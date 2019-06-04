@@ -24,5 +24,7 @@ namespace Model
         public DateTime FInstCeldaSolar { get; set; }
         public int TiposensorID { get; set; } //RTMS/VideoDetector
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

@@ -14,5 +14,9 @@ namespace Model
         public bool Read { get; set; }
         public bool Update { get; set; }
         public bool Delete { get; set; }
+        public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
+        public Rol Rol { get; set; }
     }
 }

@@ -14,5 +14,7 @@ namespace Model
         public string CTM { get; set; }
         public string Concepto { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

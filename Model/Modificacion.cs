@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Model
 {
@@ -13,8 +11,29 @@ namespace Model
         public DateTime FechaModificacion { get; set; }
         public string EliminadoPor { get; set; }
         public DateTime FechaEliminacion { get; set; }
-        public bool Activo { get; set; }
+        public bool Eliminado { get; set; }
 
+        public Activo Activo { get; set; }
+        public ActivoInterseccionControl ActivoInterseccionControl { get; set; }
+        public ActivoInterseccionInstalacion ActivoInterseccionInstalacion { get; set; }
+        public ActivoSensor ActivoSensor { get; set; }
+        public ActivoSV ActivoSV { get; set; }
+        public ActivoSVAE ActivoSVAE { get; set; }
         public Cableado Cableado { get; set; }
+        public Control Control { get; set; }
+        public Material Material { get; set; }
+        public Permiso Permiso { get; set; }
+        public Poste Poste { get; set; }
+        public RegistroElectrico RegistroElectrico { get; set; }
+        public Rol Rol { get; set; }
+        public Semaforo Semaforo { get; set; }
+        public TipoActivo TipoActivo { get; set; }
+        public TipoControl TipoControl { get; set; }
+        public TipoPoste TipoPoste { get; set; }
+        public TipoSemaforo TipoSemaforo { get; set; }
+        public TipoSenalamiento TipoSenalamiento { get; set; }
+        public TipoSensor TipoSensor { get; set; }
+        public Usuario Usuario { get; set; }
+
     }
 }

@@ -1,0 +1,5 @@
+Crear las relaciones de los modelos que faltan
+Actualizar modulo de persistencia para los nuevos modelos agregados (Rol y permiso)
+Buscar manera de insertar datos (Seed) en las migraciones (usuario administrador y roles de administrador con sus permisos)
+Crear opcion para nuevos usuarios
+Validar los roles segun las acciones del usuario

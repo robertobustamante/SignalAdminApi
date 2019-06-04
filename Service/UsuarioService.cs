@@ -4,6 +4,7 @@ using Persistence;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Linq;
 using System.Text;
 using Microsoft.Extensions.Options;
@@ -36,7 +37,6 @@ namespace Service
             catch(System.Exception ex) { }
             return result;
         }
-
         public Usuario Autenticar(string usr, string psw)
         {
             var _usuario = _dbContext.Usuario.SingleOrDefault(x => x.NombreUsuario == usr || x.Email == usr);

@@ -28,7 +28,7 @@ namespace Service
                 var mod = new Modificacion();
                 mod.CreadoPor = usrId;
                 mod.FechaCreacion = System.DateTime.UtcNow;
-                mod.Activo = true;
+                mod.Eliminado = false;
 
                 model.Modificacion = mod;
                 
@@ -48,7 +48,7 @@ namespace Service
             var result = new Cableado();
             try
             {
-                result = _dbContext.Cableado.Single(x => x.CableadoID == id && x.Modificacion.Activo == true);
+                result = _dbContext.Cableado.Single(x => x.CableadoID == id && x.Modificacion.Eliminado == false);
             }
             catch (System.Exception ex)
             {
@@ -62,8 +62,7 @@ namespace Service
             var result = new List<Cableado>();
             try
             {
-                result = _dbContext.Cableado.Where( c => c.Modificacion.Activo == true)
-                    .ToList();
+                result = _dbContext.Cableado.Where( c => c.Modificacion.Eliminado == false).ToList();
             }
             catch(System.Exception ex)
             {
@@ -102,7 +101,7 @@ namespace Service
                 var modif = _dbContext.Modificacion.Single(x => x.ModificacionID == cableado.ModificacionID);
                 modif.EliminadoPor = usrId;
                 modif.FechaEliminacion = System.DateTime.UtcNow;
-                modif.Activo = false;                
+                modif.Eliminado = true;
 
                 _dbContext.Update(modif);
                 _dbContext.SaveChanges();

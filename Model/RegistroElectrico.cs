@@ -10,5 +10,7 @@ namespace Model
         public string Descripcion { get; set; }
         public string NumParte { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

@@ -13,5 +13,7 @@ namespace Model
         public int RegistroelectricoID { get; set; }
         public int CableadoID { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

@@ -16,5 +16,7 @@ namespace Model
         public string Comentarios { get; set; }
         public int TiposenalamientoID { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

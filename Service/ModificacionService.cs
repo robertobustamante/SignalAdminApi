@@ -55,7 +55,7 @@ namespace Service
                 originalModel.FechaModificacion = model.FechaModificacion;
                 originalModel.EliminadoPor = model.EliminadoPor;
                 originalModel.FechaEliminacion = model.FechaEliminacion;
-                originalModel.Activo = model.Activo;
+                originalModel.Eliminado = model.Eliminado;
 
                 _dbContext.Update(originalModel);
                 _dbContext.SaveChanges();

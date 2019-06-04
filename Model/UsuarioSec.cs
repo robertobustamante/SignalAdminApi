@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Model
 {
@@ -16,5 +14,7 @@ namespace Model
         public int IntentosFallidosPregunta { get; set; }
         public bool BloqueoPregunta { get; set; }
         public DateTime UltimoAcceso { get; set; }
+
+        public Usuario Usuario { get; set; }
     }
 }

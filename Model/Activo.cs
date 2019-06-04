@@ -21,5 +21,7 @@ namespace Model
         public string PathDiagrama { get; set; }
         public string Estado { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

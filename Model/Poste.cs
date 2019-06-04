@@ -10,5 +10,7 @@ namespace Model
         public int TipoposteID { get; set; }
         public string NumSerie { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }

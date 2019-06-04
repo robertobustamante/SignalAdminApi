@@ -9,5 +9,7 @@ namespace Model
         public int TiposenalamientoID { get; set; }
         public string Descripcion { get; set; }
         public int ModificacionID { get; set; }
+
+        public Modificacion Modificacion { get; set; }
     }
 }
