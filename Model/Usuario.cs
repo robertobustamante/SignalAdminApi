@@ -6,7 +6,7 @@ namespace Model
 {
     public class Usuario
     {
-        public string UsuarioID { get; set; }
+        public int UsuarioID { get; set; }
         public string NombreUsuario { get; set; }
         public string Email { get; set; }
         public int RolID { get; set; }

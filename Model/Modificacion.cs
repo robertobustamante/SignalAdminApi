@@ -5,11 +5,11 @@ namespace Model
     public class Modificacion
     {
         public int ModificacionID { get; set; }
-        public string CreadoPor { get; set; }
+        public int CreadoPor { get; set; }
         public DateTime FechaCreacion { get; set; }
-        public string ModificadoPor { get; set; }
+        public int ModificadoPor { get; set; }
         public DateTime FechaModificacion { get; set; }
-        public string EliminadoPor { get; set; }
+        public int EliminadoPor { get; set; }
         public DateTime FechaEliminacion { get; set; }
         public bool Eliminado { get; set; }
 

@@ -148,7 +148,7 @@ namespace Persistence
             modelBuilder.Entity<UsuarioSec>()
                 .HasOne<Usuario>(m => m.Usuario)
                 .WithOne(c => c.UsuarioSec)
-                .HasForeignKey<Usuario>(c => c.UsuarioID);
+                .HasForeignKey<Usuario>(c => c.UsuarioID);           
 
             modelBuilder.Entity<Rol>()
                 .HasOne<Usuario>(m => m.Usuario)
@@ -165,62 +165,78 @@ namespace Persistence
             #endregion
             #region Seed Info
             Login login = new Login();
-            string UsrId = Guid.NewGuid().ToString();
+
+            modelBuilder.Entity<Modificacion>()
+                .HasData(new Modificacion
+                {
+                    ModificacionID = 1,
+                    CreadoPor = 1,
+                    FechaCreacion = DateTime.UtcNow,
+                    Eliminado = false
+                });
 
             modelBuilder.Entity<Rol>()
                 .HasData(new Rol
                 {
-                    Descripcion = "Administrador",
-                    Modificacion = new Modificacion
-                    {
-                        CreadoPor = UsrId,
-                        FechaCreacion = DateTime.UtcNow,
-                        Eliminado = false
-                    }
-                },
-                new Rol
-                {
-                    Descripcion = "Capturista",
-                    Modificacion = new Modificacion
-                    {
-                        CreadoPor = UsrId,
-                        FechaCreacion = DateTime.UtcNow,
-                        Eliminado = false
-                    }
+                    RolID = 1,
+                    Descripcion = "Administracion",
+                    ModificacionID = 1
                 });
+
+            modelBuilder.Entity<Modificacion>()
+                .HasData(new Modificacion
+                {
+                    ModificacionID = 2,
+                    CreadoPor = 1,
+                    FechaCreacion = DateTime.UtcNow,
+                    Eliminado = false
+                });
+
             modelBuilder.Entity<Permiso>()
                 .HasData(new Permiso
                 {
+                    PermisoID = 1,
+                    RolID = 1,
                     Descripcion = "<Controller>Usuario",
                     View = true,
                     Create = true,
                     Read = true,
                     Update = true,
                     Delete = true,
-                    Modificacion = new Modificacion
-                    {
-                        CreadoPor = UsrId,
-                        FechaCreacion = DateTime.UtcNow,
-                        Eliminado = false
-                    }
-
+                    ModificacionID = 2
                 });
-            
+
+            modelBuilder.Entity<Modificacion>()
+                .HasData(new Modificacion
+                {
+                    ModificacionID = 3,
+                    CreadoPor = 1,
+                    FechaCreacion = DateTime.UtcNow,
+                    Eliminado = false
+                });
+
             modelBuilder.Entity<Usuario>()
                 .HasData(new Usuario
                 {
+                    UsuarioID = 1,
                     NombreUsuario = "Administrador",
                     Email = "admin@sigues.com",
-                    UsuarioSec = new UsuarioSec
-                    {
-                        Psw = login.HashPsw("Aprobado123"),
-                        PreguntaPsw = "",
-                        RespuestaPsw = "",
-                        IntentosFallidosLogin = 0,
-                        BloqueoLogin = false,
-                        IntentosFallidosPregunta = 0,
-                        BloqueoPregunta = false
-                    }
+                    RolID = 1,
+                    ModificacionID = 3
+                });            
+
+            modelBuilder.Entity<UsuarioSec>()
+                .HasData(new UsuarioSec
+                {
+                    UsuariosecID = 1,
+                    UsuarioID = 1,
+                    Psw = login.HashPsw("Aprobado123"),
+                    PreguntaPsw = "",
+                    RespuestaPsw = "",
+                    IntentosFallidosLogin = 0,
+                    BloqueoLogin = false,
+                    IntentosFallidosPregunta = 0,
+                    BloqueoPregunta = false
                 });
             #endregion
         }

@@ -61,7 +61,7 @@ namespace Service
                     {
                         Subject = new ClaimsIdentity(new Claim[]
                         {
-                            new Claim("UserData", _usuario.UsuarioID)
+                            new Claim("UserData", _usuario.UsuarioID.ToString())
                         }),
                         Expires = System.DateTime.UtcNow.AddDays(7),
                         NotBefore = System.DateTime.UtcNow,

@@ -33,7 +33,7 @@ namespace SiguesCore.Controllers
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if(identity != null)
             {                
-                return Ok(_servicio.Add(model, identity.FindFirst("UserData").Value));
+                return Ok(_servicio.Add(model, System.Convert.ToInt32(identity.FindFirst("UserData").Value)));
             }
             return BadRequest(new { message = "Token invalido" });
         }
@@ -43,7 +43,7 @@ namespace SiguesCore.Controllers
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)
             {
-                return Ok(_servicio.Update(model, identity.FindFirst("UserData").Value));
+                return Ok(_servicio.Update(model, System.Convert.ToInt32(identity.FindFirst("UserData").Value)));
             }
             return BadRequest(new { message = "Token invalido" });
         }
@@ -54,7 +54,7 @@ namespace SiguesCore.Controllers
             var identity = HttpContext.User.Identity as ClaimsIdentity;
             if (identity != null)
             {
-                return Ok(_servicio.Delete(id, identity.FindFirst("UserData").Value));
+                return Ok(_servicio.Delete(id, System.Convert.ToInt32(identity.FindFirst("UserData").Value)));
             }
             return BadRequest(new { message = "Token invalido" });            
         }

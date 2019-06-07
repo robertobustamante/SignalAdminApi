@@ -8,11 +8,11 @@ namespace Service
 {
     public interface ICableadoService
     {
-        bool Add(Cableado model, string usrId);
-        bool Update(Cableado model, string usrId);
+        bool Add(Cableado model, int usrId);
+        bool Update(Cableado model, int usrId);
         IEnumerable<Cableado> ListarTodo();
         Cableado Listar(int id);
-        bool Delete(int id, string usrId);
+        bool Delete(int id, int usrId);
     }
     public class CableadoService : ICableadoService
     {
@@ -21,7 +21,7 @@ namespace Service
         {
             _dbContext = cableadoDbContext;
         }
-        public bool Add(Cableado model, string usrId)
+        public bool Add(Cableado model, int usrId)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace Service
             return result;
         }
 
-        public bool Update(Cableado model, string usrId)
+        public bool Update(Cableado model, int usrId)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace Service
             }
             return true;
         }
-        public bool Delete(int id, string usrId)
+        public bool Delete(int id, int usrId)
         {
             try
             {

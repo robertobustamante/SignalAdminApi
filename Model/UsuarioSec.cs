@@ -5,7 +5,7 @@ namespace Model
     public class UsuarioSec
     {
         public int UsuariosecID { get; set; }
-        public string UsuarioID { get; set; }
+        public int UsuarioID { get; set; }
         public string Psw { get; set; }
         public string PreguntaPsw { get; set; }
         public string RespuestaPsw { get; set; }
